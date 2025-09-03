@@ -1,0 +1,64 @@
+printf ('My name is Joshua Harrison and my favorite type of function are polynomial functions) 
+
+f(x) = x³ - 6x² + 11x - 6
+
+printf ('This is a third-degree polynomial, and i picked it because it reminds me of algebra and it's very simple')
+
+import sympy as sp
+
+# Define the variable
+x = sp.Symbol('x')
+
+# Define a polynomial function
+# This function is smooth, continuous, and differentiable everywhere—
+# which makes it a favorite in calculus for analysis and modeling.
+f = x**3 - 6*x**2 + 11*x - 6
+
+# Evaluate the function at some key points
+# These values help us understand the behavior of the function near its roots.
+print("f(1) =", f.subs(x, 1))  # Expected to be 0 — a root
+print("f(2) =", f.subs(x, 2))  # Also a root
+print("f(3) =", f.subs(x, 3))  # Another root
+
+# Find the roots of the polynomial
+# Roots are where the function crosses the x-axis.
+roots = sp.solve(f, x)
+print("Roots of the function:", roots)
+
+# Compute the derivative
+# This helps us find critical points—where the slope is zero.
+f_prime = sp.diff(f, x)
+critical_points = sp.solve(f_prime, x)
+print("Critical points (where slope = 0):", critical_points)
+
+import sympy as sp
+
+# Step 1: Define the symbol and function
+x = sp.Symbol('x')
+f = x**3 - 6*x**2 + 11*x - 6  # Polynomial function
+
+# Step 2: Compute the derivative
+f_prime = sp.diff(f, x)
+
+# Step 3: Compute the indefinite integral
+f_integral = sp.integrate(f, x)
+
+# Step 4: Evaluate function, derivative, and integral at x = 2
+x_val = 2
+f_val = f.subs(x, x_val)
+f_prime_val = f_prime.subs(x, x_val)
+f_integral_val = f_integral.subs(x, x_val)
+
+# Step 5: Display results with spacing and labels
+print("Polynomial Function: f(x) = x³ - 6x² + 11x - 6\n")
+
+print("Derivative:")
+print("f'(x) =", f_prime)
+print(f"f'({x_val}) =", f_prime_val, "\n")
+
+print("∫ Indefinite Integral:")
+print("∫f(x) dx =", f_integral)
+print(f"∫f(x) dx at x = {x_val} =", f_integral_val, "\n")
+
+print("Function Value:")
+print(f"f({x_val}) =", f_val)
